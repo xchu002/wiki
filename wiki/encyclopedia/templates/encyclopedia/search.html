@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    <h1>You Searched For "{{item}}"</h1>
+    {% for items in newlist %} 
+        <li><a href="{% url 'encyclopedia:entry' items %}">{{items}}</a></li>
+    {% endfor %}
+    {{ errormsg }}
+
+
+{% endblock %}
